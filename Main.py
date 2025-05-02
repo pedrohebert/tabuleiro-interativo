@@ -15,6 +15,7 @@ from random import randint
 class HotBar(BoxLayout):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+        self.size_y = 75
         
 
 class iu(BoxLayout):
