@@ -1,0 +1,25 @@
+<HotBar>:#boxlayout
+    size_hint_y: None
+    size_y: 75
+
+    ToggleButton:
+        id: botao1
+        text: "botao1"
+        grup: "teste"
+        on_press: 
+            botao2.state = "normal" #a propiedade state:str só pode ter dois valores: "normal" ou "down"
+            botao3.state = "normal"
+    ToggleButton:
+        id: botao2
+        text: "botao2"
+        grup: "teste"
+        on_press: 
+            botao1.state = "normal"
+            botao3.state = "normal"
+    ToggleButton:
+        id: botao3
+        text: "botao3"
+        grup: "teste"
+        on_press: 
+            botao1.state = "normal"
+            botao2.state = "normal"
