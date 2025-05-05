@@ -12,11 +12,6 @@ from kivy.uix.screenmanager import Screen
 
 from random import randint
 
-class HotBar(BoxLayout):
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-        self.size_y = 75
-        
 
 class iu(BoxLayout):
     def __init__(self, **kwargs):
@@ -25,25 +20,23 @@ class iu(BoxLayout):
 
         #isso serve para a class ui conseguir se comunicar com as outra class 
         self.Grid = Grid()
-        self.scroll = scroll(self.Grid)
-        self.hotbar = HotBar()
+        self.scroll = Scroll(self.Grid)
+        #self.hotbar = HotBar()
 
-        #adicionando os widget principais ao 
+        #adicionando os widget principais ao iu
         self.add_widget(self.scroll)
-        self.add_widget(self.hotbar) #adiciona o widget uma "barra de ferramenas" ao layout
+        #self.add_widget(self.hotbar) #adiciona o widget uma "barra de ferramenas" ao layout
         
         #self.children[0].on_release = self.Grid.adicionar #<- altera o acomportamento de um widget filho # **não vou usar esse jeito por ser hororoso e claramente fragio**
 
 
-class scroll(ScrollView):# <- ele deve conter o widget pelo que vai percorrer, ele so pode conter um unico widget
+class Scroll(ScrollView):# <- ele deve conter o widget pelo que vai percorrer, ele so pode conter um unico widget
     def __init__(self, Grid, **kwargs):
         super().__init__(**kwargs)
 
-        #inicio de caracteristicas
-        self.size_hint = (1, 1) # <- diz que ele deve ter 100% o tamanho do widget que ele contem
-        self.do_scroll = True  # <- diz que ele pode scrolar em x e y
-        self.bar_color = (0,0,0,0) # <- esconder as barras de scroll 
-        #fim de caracteristicas
+        # inicio de caracteristicas
+        # ver o arquivo my.kv: <Scroll>
+        # fim de caracteristicas
 
         self.add_widget(Grid) # <- o unico widget que pode conter e vai percorrer
 

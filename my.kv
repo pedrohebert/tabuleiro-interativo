@@ -1,25 +1,35 @@
-<HotBar>:#boxlayout
-    size_hint_y: None
-    
+<iu>:
+    orientation:'vertical'
 
-    ToggleButton:
-        id: botao1
-        text: "botao1"
-        grup: "teste"
-        on_press: 
-            botao2.state = "normal" #a propiedade state:str só pode ter dois valores: "normal" ou "down"
-            botao3.state = "normal"
-    ToggleButton:
-        id: botao2
-        text: "botao2"
-        grup: "teste"
-        on_press: 
-            botao1.state = "normal"
-            botao3.state = "normal"
-    ToggleButton:
-        id: botao3
-        text: "botao3"
-        grup: "teste"
-        on_press: 
-            botao1.state = "normal"
-            botao2.state = "normal"
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: None
+        height: 75
+
+        ToggleButton:
+            id: botao1
+            text: "texto"
+            on_press: 
+                botao2.state = "normal" #a propiedade state:str só pode ter dois valores: "normal" ou "down"
+                botao3.state = "normal"
+
+
+        ToggleButton:
+            id: botao2
+            text: "botao2"
+            on_press: 
+                botao1.state = "normal"
+                botao3.state = "normal"
+
+        ToggleButton:
+            id: botao3
+            text: "botao3"
+            on_press: 
+                botao1.state = "normal"
+                botao2.state = "normal"
+
+
+<Scroll>:
+    size_hint: (1, 1) # <- diz que ele deve ter 100% o tamanho do widget que ele contem
+    do_scroll: True  # <- diz que ele pode scrolar em x e y
+    bar_color: (0,0,0,0) # <- esconde as barras de rolagem
